@@ -1,0 +1,100 @@
+#projects {
+    margin-top: 125px;
+
+    .heading {
+        color: #2C2C2C;
+        font-family: 'Product Sans';
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        padding: 0;
+        margin: 0;
+    }
+
+    .projects_nav-menu {
+        display: flex;
+        flex-grow: 1;
+        padding: 30px 0;
+        a {
+            padding: 0 20px;
+            cursor: pointer;
+            color: #000;
+            font-family: 'Product Sans Medium';
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+        }
+
+        a.active {
+            color: #91C326;
+        }
+    }
+
+    .projects_listing {
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+        p {
+            margin: 4px 0;
+        }
+
+        .project_listing_ind {
+            cursor: pointer;
+            width: 300px;
+            .project_name {
+                color: #2C2C2C;
+                font-family: 'Product Sans';
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+            }
+    
+            img {
+                width: 300px;
+                height: 400px;
+                flex-shrink: 0;
+                object-fit: cover;
+            }
+        }
+    }
+
+    .project_detailed-view {
+        .project-heading {
+            display: flex;
+            flex-direction: row;
+            padding: 0 0 30px 0;
+
+            p {
+                margin: 0;
+                color: #2C2C2C;
+                font-family: 'Product Sans';
+                font-size: 40px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+            }
+        }
+
+        .project-description {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+
+            img {
+                width: 800px;
+                height: 500px;
+                flex-shrink: 0;
+                object-fit: contain;
+            }
+
+            p {
+                text-align: justify;
+                text-justify: inter-word;
+            }
+        }
+    }
+
+}

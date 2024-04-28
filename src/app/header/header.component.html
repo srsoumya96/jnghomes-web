@@ -1,0 +1,33 @@
+<section id="page-header">
+    <main>
+        <div class="header-container" style="display: flex; flex-direction: row; align-items: center; padding: 25px 80px; min-width: 1180px;">
+            <div class="logo-container" style="cursor: pointer;" (click)="navigateTo('');">
+                <img src="assets/logo/logo-jnghomes.png" height="70" width="100" />
+            </div>
+            <div class="navbar-menu" style="margin-left: auto;">
+                <nav style=" display: flex; gap: 20px;">
+                    <a class="nav-menu-button" [ngClass]="isActive === '/#about-us' ? 'active' : ''" href="#about-us">About Us</a>
+                    <div class="dropdown">
+                        <a class="nav-menu-button" (click)="navigateTo('projects')">Projects
+                        </a>
+                        <div class="dropdown-content">
+                            <a class="nav-menu-button" (click)="navigateTo('projects?Ongoing')">Ongoing</a>
+                            <a class="nav-menu-button" (click)="navigateTo('projects?Upcoming')">Upcoming</a>
+                            <a class="nav-menu-button" (click)="navigateTo('projects?Completed')">Completed</a>
+                        </div>
+                    </div>
+                    <!-- <div class="dropdown">
+                        <a class="nav-menu-button">Business
+                        </a>
+                        <div class="dropdown-content">
+                            <a class="nav-menu-button">Infrastructure</a>
+                            <a class="nav-menu-button">Construction</a>
+                        </div>
+                    </div>
+                    <a class="nav-menu-button">Gallery</a> -->
+                    <a class="nav-menu-button" [ngClass]="isActive === '/contact-us' ? 'active' : ''" (click)="navigateTo('/contact-us')">Contact Us</a>
+                </nav>
+            </div>
+        </div>
+    </main>
+</section>

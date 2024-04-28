@@ -1,0 +1,36 @@
+<section id="projects">
+    <main style="min-width: 1180px; padding: 30px 80px;">
+        <div *ngIf="!isDetailedView">
+            <p class="heading">Projects</p>
+            <div class="projects_nav-menu">
+                <a (click)="setTab('All')" [ngClass]="{ 'active' : activeTab === 'All'}">All</a> | 
+                <a (click)="setTab('Ongoing')" [ngClass]="{ 'active' : activeTab === 'Ongoing'}">Ongoing</a> | 
+                <a (click)="setTab('Upcoming')" [ngClass]="{ 'active' : activeTab === 'Upcoming'}">Upcoming</a> | 
+                <a (click)="setTab('Completed')" [ngClass]="{ 'active' : activeTab === 'Completed'}">Completed</a>
+            </div>
+            <div class="projects_listing" *ngIf="filteredProjects.length > 0; else empty_listing">
+                <div *ngFor="let project of filteredProjects" class="project_listing_ind" (click)="openDetailedView(project)">
+                    <img src="{{project.project_image}}" />
+                    <div style="display: flex; flex-direction: row; justify-content: space-between;">
+                        <p class="project_name">{{project.project_name}}</p>
+                        <p>{{project.completion_year}}</p>
+                    </div>
+                    <p>{{project.location}}</p>
+                </div>
+            </div>
+            <ng-template #empty_listing>
+                <p style="font-size: 20px;">No Data Available.</p>
+            </ng-template>
+        </div>
+        <div *ngIf="isDetailedView" class="project_detailed-view">
+            <div class="project-heading">
+                <img src="assets/icons/arrow-back.svg" style="margin: 0px 5px; cursor: pointer;" (click)="closeDetailedView()" />
+                <p>{{selectedProject.project_name}}</p>
+            </div>
+            <div class="project-description">
+                <img src="{{selectedProject.project_image}}" />
+                <p style="white-space: pre-line">{{selectedProject.description}}</p>
+            </div>
+        </div>
+    </main>
+</section>
